@@ -22,6 +22,18 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Aprendido 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    1- Rutas y parametros de rutas
+    2- Carruseles de Bootstrap4
+    3- HTTP para obtener información
+    4- Uso del api de Spotify
+        - Artistas
+        - Albumes
+        - Audio
+    5- Trabajo sobre asincrono
+    6- ngModel para enlazar campos de texto a variables
+    7- Widgets Spotify
+    8- HTML5 audio
+    9- Observables
+    10- Maps
