@@ -11,11 +11,11 @@ export class SpotifyService {
     console.log('Servicio de spotify listo')
   }
 
-  getArtistas(){
-    let url = 'https://api.spotify.com/v1/search?query=Metallica&type=artist&limit=20';
+  getArtistas(termino: string){
+    let url = `https://api.spotify.com/v1/search?query=${ termino }&type=artist&limit=20`;
 
     let headers = new HttpHeaders({
-      'authorization': 'Bearer BQBGRiXZOKWxeflLcfouoX-z9-4zhbJY70xgH9mMg4SPtQ5H7o1lU81YfboLFwcupeO0dUuR3stSFBGxT_I'
+      'authorization': 'Bearer BQCiFnLMQEVF-iU-P2VeNeM4974OG5Fc-P4s-NToyqJ4aIbkTJVKYrgm03lWNkPI189gfAJ-4PiAmPrJQyQ'
     });
 
     return this.http.get(url, { headers})
