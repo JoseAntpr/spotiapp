@@ -12,11 +12,11 @@
       <h1 class="text-capitalize">{{ termino }}</h1>
       <hr>
 
-      <ul>
-        <li *ngFor="let artista of _spotify.artistas">
-          {{ artista.name }}
-        </li>
-      </ul>
+      <div class="row">
+        <div *ngFor="let artista of _spotify.artistas" class="col-md-3 text-center puntero">
+          <img [src]="artista.images | sinfoto" class="img-thumbnail">
+        </div>
+      </div>
 
     </div>
   </div>
