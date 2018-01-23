@@ -11,6 +11,7 @@ const routes: Routes = [
     { path: 'search', component: SearchComponent },
     { path: 'artist/:id', component: ArtistComponent },
     { path: '', pathMatch: 'full', redirectTo:'home' },
+    { path: '**', pathMatch:'full', redirectTo:'home'},
 ];
 
 export const app_routing = RouterModule.forRoot(routes, {useHash: true});

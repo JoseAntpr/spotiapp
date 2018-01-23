@@ -10,12 +10,23 @@ import { SpotifyService } from '../../services/spotify.service';
 })
 export class ArtistComponent implements OnInit {
 
+  artista: any = {};
+
   constructor( private activatedRoute: ActivatedRoute,
                public _spotify: SpotifyService) { }
 
   ngOnInit() {
     this.activatedRoute.params
-          .subscribe( params => console.log( params ))
+          .map( params => params['id'])
+          .subscribe( id => {
+
+            this._spotify.getArtista( id )
+                          .subscribe( artista => {
+                            console.log(artista);
+                            this.artista = artista;
+                          });
+
+          })
   }
 
 }
