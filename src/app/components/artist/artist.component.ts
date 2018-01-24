@@ -22,11 +22,16 @@ export class ArtistComponent implements OnInit {
 
             this._spotify.getArtista( id )
                           .subscribe( artista => {
-                            console.log(artista);
                             this.artista = artista;
                           });
 
-          })
+            this._spotify.getTopTracks( id )
+                          .map( (resp: any) => resp.tracks)
+                          .subscribe( tracks => {
+                            console.log(tracks)
+                          });
+
+          });
   }
 
 }
