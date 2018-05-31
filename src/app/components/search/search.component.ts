@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SpotifyService } from '../../services/spotify.service';
 
-import { SpotifyService } from "../../services/spotify.service";
+
 
 @Component({
   selector: 'app-search',
@@ -9,19 +10,15 @@ import { SpotifyService } from "../../services/spotify.service";
 })
 export class SearchComponent {
 
-  termino: string = '';
+  termino = '';
+  artists: any[] = [];
 
   constructor(public _spotify: SpotifyService) { }
 
-  buscarArtista(){
-    if( this.termino.length  == 0 ){
-      return;
-    }
-    this._spotify.getArtistas( this.termino )
-        .subscribe( artistas => { 
-          console.log('Información lista'); 
-          console.log( artistas );
-        });
+  searchArtist() {
+    this._spotify.getArtista( this.termino ).subscribe( (data: any) => {
+      this.artists = data.artists.items;
+    });
   }
 
 }

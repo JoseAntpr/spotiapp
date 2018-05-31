@@ -16,22 +16,6 @@ export class ArtistComponent implements OnInit {
                public _spotify: SpotifyService) { }
 
   ngOnInit() {
-    this.activatedRoute.params
-          .map( params => params['id'])
-          .subscribe( id => {
-
-            this._spotify.getArtista( id )
-                          .subscribe( artista => {
-                            this.artista = artista;
-                          });
-
-            this._spotify.getTopTracks( id )
-                          .map( (resp: any) => resp.tracks)
-                          .subscribe( tracks => {
-                            this.tracks = tracks;
-                          });
-
-          });
   }
 
 }
