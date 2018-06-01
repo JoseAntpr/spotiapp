@@ -21,6 +21,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { CardComponent } from './components/shared/card/card.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { SafedomPipe } from './pipes/safedom.pipe';
 
 
 
@@ -33,7 +34,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     SinfotoPipe,
     ArtistComponent,
     CardComponent,
-    LoadingComponent
+    LoadingComponent,
+    SafedomPipe
   ],
   imports: [
     BrowserModule,

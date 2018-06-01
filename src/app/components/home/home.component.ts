@@ -10,9 +10,12 @@ export class HomeComponent implements OnInit {
 
   newSongs: any[] = [];
   loading: boolean;
+  error: boolean;
+  errorMessage: string;
 
   constructor( private _spotify: SpotifyService) {
     this.loading = true;
+    this.error = false;
   }
 
   ngOnInit() {
@@ -20,6 +23,10 @@ export class HomeComponent implements OnInit {
       console.log(data);
       this.newSongs = data;
       this.loading = false;
+    }, (errorServicio) => {
+      this.error = true;
+      this.loading = false;
+      this.errorMessage = errorServicio.error.error.message;
     });
   }
 

@@ -32,7 +32,15 @@
             </th>
             <th>{{ track.album.name }} </th>
             <th>{{ track.name }}</th>
-            <th></th>
+            <th>
+                <iframe [src]="track.uri | safedom"
+                        width="300" 
+                        height="80" 
+                        frameborder="0" 
+                        allowtransparency="true" 
+                        allow="encrypted-media">
+                </iframe>
+            </th>
           </tr>
     </tbody>
   </div>
