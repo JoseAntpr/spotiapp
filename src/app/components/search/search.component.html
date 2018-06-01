@@ -9,12 +9,5 @@
         </div>
     </div>
 </div>
-
-<div class="card-columns m-5">
-    <div class="card" *ngFor="let artist of artists">
-        <img class="card-img-top" [src]="artist.images | sinfoto" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{ artist.name }}</h5>
-        </div>
-    </div>
-</div>
+<app-loading *ngIf="loading" class="m-5"></app-loading>
+<app-card *ngIf="!loading" [items]="artists"></app-card>
